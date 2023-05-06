@@ -3,11 +3,11 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        -- defaults 
+        -- defaults
         "vim",
         "lua",
 
-        -- web dev 
+        -- web dev
         "html",
         "css",
         "javascript",
@@ -19,6 +19,15 @@ local plugins = {
   },
   {
     "neovim/nvim-lspconfig",
+
+    dependencies = {
+      "jose-elias-alvarez/null-ls.nvim",
+      config = function()
+        require "custom.configs.null-ls"
+      end,
+      requires = { "nvim-lua/plenary.nvim" },
+    },
+
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"

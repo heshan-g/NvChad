@@ -52,6 +52,72 @@ local plugins = {
     config = function()
       require("nvim-surround").setup({})
     end
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      view = {
+        width = 45,
+        adaptive_size = true,
+      },
+      git = {
+        enable = true,
+        ignore = false,
+      },
+      renderer = {
+        root_folder_label = ":t",
+        highlight_git = true,
+
+        indent_markers = {
+          enable = true,
+        },
+
+        icons = {
+          webdev_colors = true,
+          git_placement = "after",
+          modified_placement = "after",
+          padding = " ",
+          show = {
+            file = false,
+            folder = true,
+            folder_arrow = true,
+            git = true,
+            modified = true,
+          },
+
+          glyphs = {
+            default = "󰈚",
+            symlink = "",
+            folder = {
+              default = "󰉋",
+              empty = "󰉋",
+              empty_open = "",
+              open = "",
+              symlink = "",
+              symlink_open = "",
+              arrow_open = "",
+              arrow_closed = "",
+            },
+            git = {
+              unstaged = "✗",
+              staged = "✓",
+              unmerged = "",
+              renamed = "➜",
+              untracked = "✶",
+              deleted = "",
+              ignored = "◌",
+            },
+          },
+        },
+      },
+      update_focused_file = {
+        enable = true,
+        -- update_cwd = true
+      },
+      diagnostics = {
+        enable = true
+      },
+    }
   }
 }
 return plugins

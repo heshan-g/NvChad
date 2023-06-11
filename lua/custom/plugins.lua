@@ -41,6 +41,7 @@ local plugins = {
         "typescript-language-server",
         "json-lsp",
         "html-lsp",
+        "css-lsp",
         "prettier",
       }
     }
@@ -118,6 +119,18 @@ local plugins = {
         enable = true
       },
     }
-  }
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter"
+    },
+    opts = {
+      autotag = {
+        enable = true,
+      },
+    }
+  },
 }
 return plugins
